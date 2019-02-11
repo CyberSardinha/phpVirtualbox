@@ -1,10 +1,7 @@
 FROM alpine
 MAINTAINER CyberSardinha
 
-RUN apk add --update \
---repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
---repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
---no-cache bash nginx php5-fpm php5-cli php5-json php5-soap \
+RUN apk add --no-cache bash nginx php5-fpm php5-cli php5-json php5-soap \
     && apk add --no-cache --virtual build-dependencies wget unzip \
     && wget --no-check-certificate https://github.com/phpvirtualbox/phpvirtualbox/archive/develop.zip -O phpvirtualbox.zip \
     && unzip phpvirtualbox.zip -d phpvirtualbox \
